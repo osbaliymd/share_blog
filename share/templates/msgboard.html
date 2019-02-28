@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+	{% block mid %}
+
+
+			<!-- Content-->
+			<div class="wil-content">
+				
+				<!-- Section -->
+				<section class="awe-section">
+					<div class="container">
+						
+						<!-- page-title -->
+						<div class="page-title pb-40">
+							<span class="post-detail__cat" style="color: black;">Mssage - Board</span>
+							<h2 class="page-title__title">留言板</h2>
+
+							<div class="page-title__divider"></div>
+						</div><!-- End / page-title -->
+						
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+				
+				<!-- Section -->
+				<section class="awe-section bg-gray">
+					<div class="container">
+						
+						<!--  -->
+						<div>
+							<div class="post-detail__media"><img src="../static/img/works/01.jpg" alt=""/></div>
+							<div class="post-detail__entry row">
+                                {% for msg in msgs %}
+
+
+
+
+                                    <div >
+                                        <h4>{{ msg.friend_name }}：</h4>
+                                        <h5>{{ msg.friend_comment }}</h5>
+                                        <h5>{{ msg.time }}</h5>
+                                        <font  style="color: red"> ❤❤❤</font>
+
+
+                                    </div>
+                                    <br>
+                                {% endfor %}
+
+                            </div>
+						</div><!-- End /  -->
+						
+                    </div>
+                </section>
+					</div>
+
+            </div>
+
+				<!-- End / Section -->
+				
+			</div>
+			<!-- End / Content-->
+            {% endblock %}

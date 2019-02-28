@@ -1,0 +1,98 @@
+
+    {% extends 'base.html' %}
+	{% block mid %}
+			<!-- Content-->
+			<div class="wil-content">
+				
+				<!-- Section -->
+				<section class="awe-section">
+					<div class="container">
+						
+						<!-- page-title -->
+						<div class="page-title pb-40">
+							<h2 class="page-title__title">留下你的脚印</h2>
+							<p class="page-title__text">既然来了 留下点什么再离开吧</p>
+							<div class="page-title__divider"></div>
+						</div><!-- End / page-title -->
+						
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+				
+				<!-- Section -->
+				<section class="awe-section bg-gray">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-lg-3 ">
+								
+								<!-- contact -->
+								<div class="contact">
+									<div class="contact__icon"><i class="pe-7s-note"></i></div>
+									<h3 class="contact__title">开发者联系方式</h3>
+                                    <div class="contact__text" >WeChat：522090052<br>QQ:522090052</div>
+								</div><!-- End / contact -->
+								
+								
+								<!-- contact -->
+								<div class="contact">
+									<div class="contact__icon"><i class="pe-7s-back"></i></div>
+									<h3 class="contact__title">网址</h3>
+									<div class="contact__text" >www.osbali.club</div>
+								</div><!-- End / contact -->
+								
+								
+								<!-- contact -->
+								<div class="contact">
+									<div class="contact__icon" ><i class="pe-7s-voicemail"></i></div>
+									<h3 class="contact__title" >e-mail</h3>
+									<div class="contact__text">OsbaliYmd@outlook.com</div>
+								</div><!-- End / contact -->
+								
+							</div>
+							<div class="col-md-7 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-1 ">
+								<div class="form-wrapper">
+									{% csrf_token %}
+									<!-- form-item -->
+                                    <form  action="" method="post">
+									<div class="form-item form-item--half">
+										<input class="form-control" type="text" name="name" placeholder="昵称" />
+									</div><!-- End / form-item -->
+									
+									
+									<!-- form-item -->
+									<div class="form-item form-item--half">
+										<input class="form-control" type="text" name="email" placeholder="电子邮件地址" />
+									</div><!-- End / form-item -->
+									
+									
+									<!-- form-item -->
+									<div class="form-item">
+										<input class="form-control" type="text" name="wechat" placeholder="微信" >
+									</div><!-- End / form-item -->
+									
+									
+									<!-- form-item -->
+									<div class="form-item">
+										<textarea class="form-control" placeholder="留言内容 " name="msg" style="min-height:200px;">{{ friend.friend_msg }}</textarea>
+									</div><!-- End / form-item -->
+									
+									
+									<!-- form-item -->
+									<div class="form-item">
+										<input class="md-btn md-btn--primary md-btn--lg " type="submit"  value="留下脚印"  href="#" >
+										</input>
+									</div><!-- End / form-item -->
+                                        </form>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+			</div>
+
+			
+		{% endblock %}

@@ -1,0 +1,88 @@
+{% extends 'base.html'%}
+			{% block mid %}
+
+
+			<!-- Content-->
+			<div class="wil-content">
+				
+				<!-- Section -->
+				<section class="awe-section">
+					<div class="container">
+						
+						<!-- page-title -->
+						<div class="page-title pb-40">
+                                {% if music %}
+                                    <h2 class="page-title__title">音乐分享详情</h2>
+                                {% elif book %}
+                                    <h2 class="page-title__title">图书分享详情</h2>
+                                {% elif movie%}
+                                    <h2 class="page-title__title">电影分享详情</h2>
+                                {%  elif diray%}
+                                    <h2 class="page-title__title">日记分享详情</h2>
+                                {% endif %}
+							<p class="page-title__text"> </p>
+							<div class="page-title__divider"></div>
+						</div><!-- End / page-title -->
+						
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+				
+				<!-- Section -->
+				<section class="awe-section bg-gray">
+					<div class="container">
+						
+						<!--  -->
+						<div>
+							<div class="work-detail__entry">
+                                {% if movie %}
+                                    {# 电影模块#}
+                                    <h3 style="text-align: center"> 片名： {{ movie.movie_name }}</h3>
+                                    <h5 style="text-indent: 3em;text-align: center"> 发布时间{{ movie.time }}</h5>
+                                    <div class="comment" style=" padding:100px; text-indent: 3em; font-family: 微软雅黑; font-size: 20px ;">{{ movie.movie_comment }}</div><br>
+                                     <h1 style="text-align: center">T h e - E n d </h1>
+                                {% elif music %}
+                                    {# 音乐模块#}
+                                    <h3 style="text-align: center"> 歌名： {{ music.music_name }}</h3>
+                                    <h4 style="text-align: center"> 歌手： {{ music.music_singer }}</h4>
+                                    <p style=" text-indent: 3em; font-family: 微软雅黑; font-size: 20px ">{{ music.music_comment }}</p><br>
+                                    <h5 style="text-indent: 3em;text-align: center"> 发布时间{{ music.time}}</h5>
+                                    <h1 style="text-align: center">T h e - E n d </h1>
+                                {% elif book %}
+                                    {# 书籍模块#}
+                                    <h3 style="text-align: center"> 书名： {{ book.book_name }}</h3>
+                                    <h4 style="text-align: center"> 作者： {{ book.book_auther }}</h4>
+                                    <p style=" text-indent: 3em; font-family: 微软雅黑; font-size: 20px ">{{ book.book_comment }}</p><br>
+                                    <h5 style="text-indent: 3em;text-align: center"> 发布时间{{ book.time}}</h5>
+                                    <h1 style="text-align: center">T h e - E n d </h1>
+                                {% elif diray %}
+                                    {# 日记模块#}
+                                    <h3 style="text-align: center"> 日记 {{ diray.diary_data}}</h3>
+                                    <h4 style="text-align: center"> {{ diray.diray_weather }}</h4>
+                                    <p style=" text-indent: 3em; font-family: 微软雅黑; font-size: 20px ">{{ diray.diray_comment }}</p><br>
+                                    <h5 style="text-indent: 3em;text-align: center"> 发布时间{{ diray.time}}</h5>
+                                    <h1 style="text-align: center">T h e - E n d </h1>
+                                {% elif friend %}
+                                    {#留言模块#}
+                                    <h3 style="text-align: center"> 昵称： {{ friend.friend_name}}</h3>
+                                    <p style="text-align: center"> {{ friend.friend_comment }}</p>
+                                    <h5 style="text-indent: 3em;text-align: center"> 留言时间:{{friend.time}}</h5>
+                                    <h1 style="text-align: center">T h e - E n d </h1>
+
+                                {% endif %}
+							</div>
+
+							</div>
+						</div><!-- End /  -->
+						
+
+
+				</section>
+{#				<!-- End / Section -->#}
+{#				#}
+			</div>
+{#			<!-- End / Content-->#}
+			
+
+	{% endblock %}

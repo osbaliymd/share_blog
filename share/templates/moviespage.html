@@ -1,0 +1,64 @@
+        {% extends 'base.html' %}
+            {% block mid %}
+			
+			<!-- Content-->
+			<div class="wil-content">
+				
+				<!-- Section -->
+				<section class="awe-section">
+					<div class="container">
+						
+						<!-- page-title -->
+						<div class="page-title pb-40">
+							<h2 class="page-title__title">所有影评</h2>
+							<p class="page-title__text">All - Comment On Film </p>
+							<div class="page-title__divider"></div>
+						</div><!-- End / page-title -->
+						
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+				
+				<!-- Section -->
+				<section class="awe-section bg-gray">
+					<div class="container">
+						<div class="grid-css grid-css--masonry" data-col-lg="3" data-col-md="2" data-col-sm="2" data-col-xs="1" data-gap="30">
+							<div class="grid__inner">
+								<div class="grid-sizer"></div>
+
+
+                                {% for movie in movies  %}
+								<div class="grid-item">
+									<div class="grid-item__inner">
+										<div class="grid-item__content-wrapper">
+
+											<!-- post -->
+
+											<div class="post">
+												<div class="post__media"><a href="/sharecontent/more/movie/{{ movie.datemodel_ptr_id }}"><img src="https://images.pexels.com/photos/807034/pexels-photo-807034.jpeg?w=1260&amp;h=750&amp;auto=compress&amp;cs=tinysrgb" alt=""/></a></div>
+
+                                                <div class="post__body">
+                                                    <div class="post__meta"><span class="date">{{ movie.time }}</span>
+													<h2 class="post__title"><a href="/sharecontent/more/movie/{{ movie.datemodel_ptr_id }}">{{ movie.movie_name }}</a></h2>
+													<p class="post__text" style="color: black">{{ movie.movie_title }}</p>
+													<a class="md-btn md-btn--outline-primary" href="/sharecontent/more/movie/{{ movie.datemodel_ptr_id }}">read more
+													</a>
+                                                    </div>
+                                                </div>
+
+											</div>
+                                         </div>
+									</div>
+								</div>
+                                {% endfor%}
+
+                            </div>
+                        </div>
+                    </div>
+				</section>
+                </div>
+
+
+
+	{% endblock %}

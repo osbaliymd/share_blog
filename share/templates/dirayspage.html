@@ -1,0 +1,62 @@
+ {% extends 'base.html' %}
+            {% block mid %}
+			
+			<!-- Content-->
+			<div class="wil-content">
+				
+				<!-- Section -->
+				<section class="awe-section">
+					<div class="container">
+						
+						<!-- page-title -->
+						<div class="page-title pb-40">
+							<h2 class="page-title__title">个人日记</h2>
+							<p class="page-title__text">Personal - Diray </p>
+							<div class="page-title__divider"></div>
+						</div><!-- End / page-title -->
+						
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+				
+				<!-- Section -->
+				<section class="awe-section bg-gray">
+					<div class="container">
+						<div class="grid-css grid-css--masonry" data-col-lg="3" data-col-md="2" data-col-sm="2" data-col-xs="1" data-gap="30">
+							<div class="grid__inner">
+								<div class="grid-sizer"></div>
+
+                                
+                                {% for diray in dirays  %}
+								<div class="grid-item">
+									<div class="grid-item__inner">
+										<div class="grid-item__content-wrapper">
+
+											<!-- post -->
+
+											<div class="post">
+												<div class="post__media"><a href="/sharecontent/diray/{{ diray.datemodel_ptr_id }}"><img src="https://images.pexels.com/photos/15382/pexels-photo.jpg?h=350&amp;auto=compress&amp;cs=tinysrgb" alt=""/></a></div>
+
+                                                <div class="post__body">
+                                                    <h2 class="post__title"><a href="/sharecontent/diray/{{ diray.datemodel_ptr_id }}">{{ diray.diray_weather }}</a></h2>
+													<p class="post__text" style="color: black">{{ diray.diray_date }}</p>
+													<a class="md-btn md-btn--outline-primary" href="/sharecontent/diray/{{ diray.datemodel_ptr_id }}">read more
+													</a>
+                                                    </div>
+                                                </div>
+
+											</div>
+                                            <!-- End / post -->
+
+										</div>
+									</div>
+								</div>
+                                {% endfor%}
+                            </div>
+                        </div>
+
+				</section>
+            </div>
+
+	{% endblock %}
